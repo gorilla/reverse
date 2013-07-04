@@ -5,7 +5,7 @@
 /*
 Package gorilla/reverse is a set of utilities to create request routers.
 
-If provides interfaces to match and extract variables from an HTTP request
+It provides interfaces to match and extract variables from an HTTP request
 and build URLs for registered routes. It also has a variety of matcher
 implementations for all kinds of request attributes, among other utilities.
 
