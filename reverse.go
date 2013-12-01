@@ -92,26 +92,23 @@ func (r *Regexp) Values(s string) url.Values {
 
 // Revert builds a string for this regexp using the given values. Positional
 // values use an empty string as key.
-//
-// The values are modified in place, and only the unused ones are left.
 func (r *Regexp) Revert(values url.Values) (string, error) {
 	vars := make([]interface{}, len(r.groups))
+	next := make(map[string]int, len(values))
 	for k, v := range r.groups {
-		if len(values[v]) == 0 {
+		if next[v] >= len(values[v]) {
 			return "", fmt.Errorf(
 				"Missing key %q to revert the regexp "+
 					"(expected a total of %d variables)", v, len(r.groups))
 		}
-		vars[k] = values[v][0]
-		values[v] = values[v][1:]
+		vars[k] = values[v][next[v]]
+		next[v]++
 	}
 	return fmt.Sprintf(r.template, vars...), nil
 }
 
 // RevertValid is the same as Revert but it also validates the resulting
 // string matching it against the compiled regexp.
-//
-// The values are modified in place, and only the unused ones are left.
 func (r *Regexp) RevertValid(values url.Values) (string, error) {
 	reverse, err := r.Revert(values)
 	if err != nil {
