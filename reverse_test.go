@@ -84,7 +84,7 @@ func TestReverseRegexp(t *testing.T) {
 		}
 		// MatchString()
 		if r.MatchString(test.result) != test.valid {
-			t.Errorf("%q: expected match %q, got %q", test.pattern, test.valid, !test.valid)
+			t.Errorf("%q: expected match %v, got %v", test.pattern, test.valid, !test.valid)
 		}
 		// Values()
 		if test.valid {
