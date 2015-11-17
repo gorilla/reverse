@@ -41,6 +41,5 @@ There are a few limitations that can't be changed:
 a placeholder. So in `1(\d+([a-z]+))3` there is only one placeholder
 although there are two capturing groups: re.Revert(url.Values{"": {"2", "a"}})
 results in "123" and not "12a3".
-
 2. Literals inside capturing groups are ignored; the whole group becomes
 a placeholder.
