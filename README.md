@@ -1,5 +1,12 @@
-reverse
-=======
+# reverse
+
+![testing](https://github.com/gorilla/reverse/actions/workflows/test.yml/badge.svg)
+[![codecov](https://codecov.io/github/gorilla/reverse/branch/main/graph/badge.svg)](https://codecov.io/github/gorilla/reverse)
+[![godoc](https://godoc.org/github.com/gorilla/reverse?status.svg)](https://godoc.org/github.com/gorilla/reverse)
+[![sourcegraph](https://sourcegraph.com/github.com/gorilla/reverse/-/badge.svg)](https://sourcegraph.com/github.com/gorilla/reverse?badge)
+
+![Gorilla Logo](https://github.com/gorilla/.github/assets/53367916/d92caabf-98e0-473e-bfbf-ab554ba435e5)
+
 Package gorilla/reverse is a set of utilities to create request routers.
 
 It provides interfaces to match and extract variables from an HTTP request
