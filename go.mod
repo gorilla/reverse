@@ -1,3 +1,3 @@
 module github.com/gorilla/reverse
 
-go 1.19
+go 1.20
